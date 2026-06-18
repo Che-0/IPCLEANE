@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP CLEANER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container-fluid bg-primary-subtle   " >
+        
+        <div class="row">
+            <h1 class="text-center" >IP CLEANER</h1>
+             
+        </div>
+
+        <div class="row">
+            <div class="column col-lg-4  bg-danger text-white">
+                <p>Chose file</p>
+                <input type="file" id="filePicker" name="document-upload" accept=".pdf, .docx , .txt">
+                <div>
+                <button  type="button" id="enviar" onclick="limpiar()">Start</button>
+                </div>
+            </div>
+
+
+            <div class="column col-lg-4  bg-dark text-white">
+
+
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="ALL IP" id="checkDefault">
+                <label class="form-check-label" for="checkDefault">
+                    ALL IP
+                </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="PRIVATE" id="checkChecked" checked>
+                    <label class="form-check-label" for="checkChecked">
+                        PRIVATE
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="PUBLIC" id="checkChecked" checked>
+                    <label class="form-check-label" for="checkChecked">
+                        PUBLIC
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="BROADCAST" id="checkChecked" checked>
+                    <label class="form-check-label" for="checkChecked">
+                        BROADCAST
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="DUPLICATES" id="checkChecked" checked>
+                    <label class="form-check-label" for="checkChecked">
+                        DUPLICATES
+                    </label>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class="row bg-secondary col-lg-8   contenedor">
+            <p>Your text sr</p>
+            <p id="informacion"></p>
+        </div>
+
+
+        <div class="tenor-gif-embed column" data-postid="17324006453246682051" data-share-method="host" data-aspect-ratio="1.5" data-width="10%"></div>
+    </div>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
