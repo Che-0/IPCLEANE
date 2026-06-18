@@ -6,6 +6,21 @@ function parametros() {
         .get();
 }
 
+function descargar() {
+
+
+    const contenido = $(".contenedor").text();
+    const blob = new Blob([contenido], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "ips_limpias.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
 function limpiar() {
 
     const tipos = parametros();
@@ -22,6 +37,10 @@ function limpiar() {
         return;
     }
 
+    //<button class="btn btn-success" id="descargar" onclick="descargar()">Download</button>
+    $(".contenedor").append(`
+        <button class="btn btn-success" id="descargar" onclick="descargar()">Download</button>
+    `);
     const reader = new FileReader();
 
     reader.onload = function (e) {
@@ -29,7 +48,7 @@ function limpiar() {
         const texto = e.target.result;
 
         // Limpiar resultados anteriores
-        $(".contenedor").html("");
+        //$(".contenedor").html("");
 
         // Regex general IPv4
         const ipRegex =
