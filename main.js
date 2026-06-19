@@ -37,6 +37,8 @@ function limpiar() {
         return;
     }
 
+        // limpiar contenido anterior
+    $(".contenedor").empty();
     //<button class="btn btn-success" id="descargar" onclick="descargar()">Download</button>
     $(".contenedor").append(`
         <button class="btn btn-success" id="descargar" onclick="descargar()">Download</button>
