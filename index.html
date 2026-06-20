@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP CLEANER</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container-fluid bg-primary-subtle   " >
+    <div class="container-fluid bg-primary-darker    " >
         
-        <div class="row">
-            <h1 class="text-center" >IP CLEANER</h1>
-             
+        <div class="row ">
+            <h1 class="column text-center" >IP CLEANER</h1>       
         </div>
 
         <div class="row">
-            <div class="column col-lg-4  bg-danger text-white">
+            <div class="column col-lg-4  bg-dark text-white">
                 <p>Chose file</p>
                 <input type="file" id="filePicker" name="document-upload" accept=".pdf, .docx , .txt">
                 <div>
-                <button  type="button" id="enviar" onclick="limpiar()">Start</button>
+                <button  class="btn btn-primary m-2" type="button" id="enviar" onclick="limpiar()">Start</button>
                 </div>
             </div>
+
 
 
             <div class="column col-lg-4  bg-dark text-white">
@@ -70,48 +71,63 @@
 
             <div class="column col-lg-4  bg-dark text-white">
 
-                <input type="text" id="ipInput" placeholder="Enter IP address">
-                <button type="button" id="filterButton">Search</button>
+                <input type="text" id="searchIP" placeholder="Enter IP address">
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="ABUSE" id="checkChecked" checked>
-                    <label class="form-check-label" for="checkChecked">
-                        ABUSE IP
+
+
+                <div>
+                    <label>
+                            ABUSE IP
                     </label>
+                        <a class="text-white" href="#" id="link-abuse" title="Abrir AbuseIPDB" aria-label="Abrir AbuseIPDB">
+                            <i class="bi bi-search"></i>
+                        </a>
                 </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="VIRUS" id="checkChecked" checked>
-                    <label class="form-check-label" for="checkChecked">
-                        VIRUS TOTAL
+                <div>
+                    <label>
+                            VIRUSTOTAL
                     </label>
+                        <a class="text-white" href="#" id="link-virus" title="Abrir VirusTotal" aria-label="Abrir VirusTotal">
+                            <i class="bi bi-search"></i>
+                        </a>
                 </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="SUCURY" id="checkChecked" checked>
-                    <label class="form-check-label" for="checkChecked">
-                        SUCURY
+                <div>
+                    <label>
+                            SUCURI
                     </label>
+                        <a class="text-white" href="#" id="link-sucuri" title="Abrir Sucuri" aria-label="Abrir Sucuri">
+                            <i class="bi bi-search"></i>
+                        </a>
                 </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="MXTOOLBOX" id="checkChecked" checked>
-                    <label class="form-check-label" for="checkChecked">
-                        MXTOOLBOX
+                <div>
+                    <label>
+                            MXTOOLBOX
                     </label>
+                        <a class="text-white" href="#" id="link-mxtoolbox" title="Abrir MXToolbox" aria-label="Abrir MXToolbox">
+                            <i class="bi bi-search"></i>
+                        </a>
                 </div>
+
 
             </div>
         </div>
 
 
-        <div class="row bg-secondary col-lg-8   contenedor">
-            
+        <div class="row  col-lg-13   contenedor">
             
         </div>
 
+        <div class="row  col-lg-12 justify-content-center">
+            
+            <div class="tenor-gif-embed  position-center" data-postid="17324006453246682051" data-share-method="host" data-aspect-ratio="1.5" data-width="10%   "></div>
+        </div>
+        
 
-        <div class="tenor-gif-embed column" data-postid="17324006453246682051" data-share-method="host" data-aspect-ratio="1.5" data-width="10%"></div>
+
+        
     </div>
 
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>

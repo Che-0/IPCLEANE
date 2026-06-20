@@ -6,6 +6,8 @@ function parametros() {
         .get();
 }
 
+
+// arrglarla para que retorne un array de ips limpias, sin etiquetas html ni nada, solo las ips, para que se puedan descargar en un txt
 function descargar() {
 
 
@@ -15,11 +17,60 @@ function descargar() {
     const a = document.createElement("a");
     a.href = url;
     a.download = "ips_limpias.txt";
-    document.body.appendChild(a);
+    $(".contenedor").append(a);
     a.click();
-    document.body.removeChild(a);
+    $(".contenedor").remove(a);
     URL.revokeObjectURL(url);
 }
+
+function obtenerIPBuscada() {
+    const ip = $("#searchIP").val().trim();
+
+    if (!ip) {
+        alert("Escribe una IP primero.");
+        return null;
+    }
+
+    return ip;
+}
+
+function configurarLinksBusqueda() {
+    $("#link-abuse").on("click", function (event) {
+        event.preventDefault();
+        const ip = obtenerIPBuscada();
+        if (ip) {
+            abrirEnNuevaPestana("https://www.abuseipdb.com/check/" + ip);
+        }
+    });
+
+    $("#link-virus").on("click", function (event) {
+        event.preventDefault();
+        const ip = obtenerIPBuscada();
+        if (ip) {
+            abrirEnNuevaPestana("https://www.virustotal.com/gui/ip-address/" + ip);
+        }
+    });
+
+    $("#link-sucury").on("click", function (event) {
+        event.preventDefault();
+        const ip = obtenerIPBuscada();
+        if (ip) {
+            abrirEnNuevaPestana("https://sitecheck.sucuri.net/results/" + ip);
+        }
+    });
+
+    $("#link-mxtoolbox").on("click", function (event) {
+        event.preventDefault();
+        const ip = obtenerIPBuscada();
+        if (ip) {
+            abrirEnNuevaPestana("https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a" + ip + "&run=toolpage");
+        }
+    });
+}
+
+$(document).ready(function () {
+    configurarLinksBusqueda();
+});
 
 function limpiar() {
 
@@ -133,4 +184,33 @@ function limpiar() {
     };
 
     reader.readAsText(file);
+};
+
+
+function abuse(direccion) {
+    const page = "https://www.abuseipdb.com/check/" + direccion;
+    abrirEnNuevaPestana(page);
+}
+
+function whois(direccion) {
+    const page = "https://www.whois.com/whois/" + direccion;
+    abrirEnNuevaPestana(page);
+}
+
+function abrirEnNuevaPestana(url) {
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.target = "_blank";
+    enlace.rel = "noopener noreferrer";
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+}
+
+function searchIP() {
+    const ip = $("#searchIP").val();
+    console.log("Searching for IP:", ip);
+    // abrir en nuevas pestañas los resultados de whois y abuseipdb para la ip ingresada
+    whois(ip);
+    abuse(ip);
 }
